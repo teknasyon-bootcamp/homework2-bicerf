@@ -16,6 +16,9 @@
  * bekliyoruz. Bununla ilgili detaylı bilgi diğer betiklerde yer alıyor.
  */
 
+
+
+debug_backtrace() || die (header('HTTP/1.0 403 Forbidden')); //Burada functions.php sayfasına direkt erişim isteği yapılırsa http 403 erişim hatası fırlatıyoruz:D
 function getLatestPosts($count = 5)
 {
     $posts = [];
@@ -49,3 +52,7 @@ EOT;
 
 // Aşağıya fonksiyonu tanımlayabilirsiniz.
 
+function getRandomPostCount($min,$max) //bu fonksiyondan döndürülen değeri getLatestPosts fonk.'una göndereceğiz..
+{
+    return rand($min,$max) ;
+}

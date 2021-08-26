@@ -20,3 +20,16 @@
  * dosyasını döngü içinde dahil etmeli ve her yazı için detayları göstermelisiniz.
  */
 
+ 
+ 
+ 
+include_once "functions.php"; //functions içeri aktarıldı
+$randomCount = getRandomPostCount(1,10); //1-10 Arasında rastgele bir tamsayı alıyoruz ve bunu randomCount değişkenine atıyoruz
+$getPost = getLatestPosts($randomCount); //randomCount değişkenini getLatestPosts 'a gönderip dizi döndürüyoruz ve diziyi getPost'a atıyoruz.
+
+
+   
+foreach ($getPost as $id => $value) { //her yinelemede sırası gelen value değerinin keyi id'e atılır ve value döndürülür(value = dizideki her bir post)
+
+      include "post.php"; //post.php içeri aktarıldı 
+}
